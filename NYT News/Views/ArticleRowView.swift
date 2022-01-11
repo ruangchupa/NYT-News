@@ -46,12 +46,19 @@ struct ArticleRowView: View {
                 Text(article.relativePublicationTime)
                     .font(.caption)
             }
+            .padding(.init(top: 0.0, leading: 8.0, bottom: 0.0, trailing: 8.0))
         }
     }
 }
 
 struct ArticleRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleRowView(article: .previewData[0])
+        NavigationView {
+            List {
+                ArticleRowView(article: .previewData[0])
+                    .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
+            }
+            .listStyle(.plain)
+        }
     }
 }

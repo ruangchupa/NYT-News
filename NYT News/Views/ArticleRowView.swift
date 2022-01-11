@@ -11,7 +11,42 @@ struct ArticleRowView: View {
     let article: Article
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 16.0) {
+            AsyncImage(url: article.articleMultimediaURL) { phase in
+                switch phase {
+                case .empty:
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                        Spacer()
+                    }
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                case .failure:
+                    HStack {
+                        Spacer()
+                        Image(systemName: "photo")
+                        Spacer()
+                    }
+                    
+                
+                @unknown default:
+                    fatalError()
+                }
+            }
+            .frame(height: 300)
+            .background(Color.gray)
+            
+            VStack(alignment: .leading, spacing: 8.0) {
+                Text(article.title)
+                    .font(.headline)
+                Text(article.abstract)
+                Text(article.relativePublicationTime)
+                    .font(.caption)
+            }
+        }
     }
 }
 

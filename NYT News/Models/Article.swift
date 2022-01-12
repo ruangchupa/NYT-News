@@ -44,6 +44,11 @@ struct Article {
 }
 
 extension Article: Codable {}
+extension Article: Equatable {
+    static func ==(lhs: Article, rhs: Article) -> Bool {
+        return lhs.url == rhs.url
+    }
+}
 extension Article: Identifiable {
     var id: String { url }
 }
@@ -59,7 +64,7 @@ extension Article {
         jsonDecoder.dateDecodingStrategy = .iso8601
         jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
         
-        let apiResponse = try! jsonDecoder.decode(NYTAPIResponse.self, from: data)
+        let apiResponse = try! jsonDecoder.decode(NYTAPIResponse<Article>.self, from: data)
         
         return apiResponse.results ?? []
     }

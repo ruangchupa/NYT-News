@@ -23,6 +23,10 @@
 		DA919EF0278E4614000B1AE0 /* Multimedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EEF278E4614000B1AE0 /* Multimedia.swift */; };
 		DA919EF2278E4D72000B1AE0 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EF1278E4D72000B1AE0 /* ArticleListView.swift */; };
 		DA919EF4278E5324000B1AE0 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EF3278E5324000B1AE0 /* SafariView.swift */; };
+		DA919EF6278E65F5000B1AE0 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EF5278E65F5000B1AE0 /* ArticleDetailView.swift */; };
+		DA919EF9278E66A9000B1AE0 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = DA919EF8278E66A9000B1AE0 /* SwiftUIPager */; };
+		DA919EFC278E6FB2000B1AE0 /* NYTAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EFB278E6FB2000B1AE0 /* NYTAPI.swift */; };
+		DA919EFE278E703B000B1AE0 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EFD278E703B000B1AE0 /* Section.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,9 @@
 		DA919EEF278E4614000B1AE0 /* Multimedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multimedia.swift; sourceTree = "<group>"; };
 		DA919EF1278E4D72000B1AE0 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		DA919EF3278E5324000B1AE0 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		DA919EF5278E65F5000B1AE0 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
+		DA919EFB278E6FB2000B1AE0 /* NYTAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTAPI.swift; sourceTree = "<group>"; };
+		DA919EFD278E703B000B1AE0 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA919EF9278E66A9000B1AE0 /* SwiftUIPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +124,7 @@
 				DA919EE4278E3BFF000B1AE0 /* NYT-News-Info.plist */,
 				DA919EDF278E3503000B1AE0 /* Models */,
 				DA919EE9278E4314000B1AE0 /* Views */,
+				DA919EFA278E6F1B000B1AE0 /* Services */,
 				DA919EB0278E34C8000B1AE0 /* NYT_NewsApp.swift */,
 				DA919EB2278E34C8000B1AE0 /* ContentView.swift */,
 				DA919EB4278E34CF000B1AE0 /* Assets.xcassets */,
@@ -158,6 +167,7 @@
 				DA919EE5278E3D74000B1AE0 /* NYTAPIResponse.swift */,
 				DA919EE7278E3EA5000B1AE0 /* Article.swift */,
 				DA919EEF278E4614000B1AE0 /* Multimedia.swift */,
+				DA919EFD278E703B000B1AE0 /* Section.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,8 +194,17 @@
 				DA919EED278E4361000B1AE0 /* ArticleRowView.swift */,
 				DA919EF1278E4D72000B1AE0 /* ArticleListView.swift */,
 				DA919EF3278E5324000B1AE0 /* SafariView.swift */,
+				DA919EF5278E65F5000B1AE0 /* ArticleDetailView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DA919EFA278E6F1B000B1AE0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DA919EFB278E6FB2000B1AE0 /* NYTAPI.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +223,9 @@
 			dependencies = (
 			);
 			name = "NYT News";
+			packageProductDependencies = (
+				DA919EF8278E66A9000B1AE0 /* SwiftUIPager */,
+			);
 			productName = "NYT News";
 			productReference = DA919EAD278E34C8000B1AE0 /* NYT News.app */;
 			productType = "com.apple.product-type.application";
@@ -276,6 +298,9 @@
 				Base,
 			);
 			mainGroup = DA919EA4278E34C8000B1AE0;
+			packageReferences = (
+				DA919EF7278E66A8000B1AE0 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
+			);
 			productRefGroup = DA919EAE278E34C8000B1AE0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -319,15 +344,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA919EFC278E6FB2000B1AE0 /* NYTAPI.swift in Sources */,
 				DA919EBD278E34CF000B1AE0 /* NYT_News.xcdatamodeld in Sources */,
 				DA919EEE278E4361000B1AE0 /* ArticleRowView.swift in Sources */,
 				DA919EBA278E34CF000B1AE0 /* Persistence.swift in Sources */,
 				DA919EE8278E3EA5000B1AE0 /* Article.swift in Sources */,
 				DA919EF4278E5324000B1AE0 /* SafariView.swift in Sources */,
 				DA919EB3278E34C8000B1AE0 /* ContentView.swift in Sources */,
+				DA919EFE278E703B000B1AE0 /* Section.swift in Sources */,
 				DA919EE6278E3D74000B1AE0 /* NYTAPIResponse.swift in Sources */,
 				DA919EF0278E4614000B1AE0 /* Multimedia.swift in Sources */,
 				DA919EF2278E4D72000B1AE0 /* ArticleListView.swift in Sources */,
+				DA919EF6278E65F5000B1AE0 /* ArticleDetailView.swift in Sources */,
 				DA919EB1278E34C8000B1AE0 /* NYT_NewsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,6 +687,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DA919EF7278E66A8000B1AE0 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fermoya/SwiftUIPager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA919EF8278E66A9000B1AE0 /* SwiftUIPager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA919EF7278E66A8000B1AE0 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
+			productName = SwiftUIPager;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		DA919EBB278E34CF000B1AE0 /* NYT_News.xcdatamodeld */ = {

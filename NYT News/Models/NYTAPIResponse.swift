@@ -8,7 +8,7 @@
 import Foundation
 
 /// A type for New York Times base API response.
-struct NYTAPIResponse {
+struct NYTAPIResponse<T> {
     /// The status of the request (e.g "OK").
     let status: String?
     
@@ -16,7 +16,7 @@ struct NYTAPIResponse {
     let lastUpdated: Date?
     
     /// Results of the request.
-    let results: [Article]?
+    let results: [T]?
 }
 
-extension NYTAPIResponse: Decodable {}
+extension NYTAPIResponse: Decodable where T: Decodable {}

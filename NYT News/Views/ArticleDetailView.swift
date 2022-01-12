@@ -14,18 +14,17 @@ struct ArticleDetailView: View {
     let articles: [Article]
     
     var body: some View {
-        NavigationView {
-            Pager(page: page,
-                  data: articles,
-                  id: \.id,
-                  content: { index in
-                      // create a page based on the data passed
-                if let articleURL = index.articleURL {
-                    SafariView(url: articleURL)
-                }
-             })
-                .sensitivity(.high)
-        }
+        Pager(page: page,
+              data: articles,
+              id: \.id,
+              content: { index in
+                  // create a page based on the data passed
+            if let articleURL = index.articleURL {
+                SafariView(url: articleURL)
+            }
+         })
+            .sensitivity(.high)
+        
     }
 }
 

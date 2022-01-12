@@ -54,6 +54,7 @@ struct HomeTabView: View {
         } label: {
             Image(systemName: "line.horizontal.3")
                 .imageScale(.large)
+                .foregroundColor(.black)
         }
     }
     

@@ -12,8 +12,15 @@ struct ArticleListView: View {
     
     var body: some View {
         List {
-            ForEach(articles) { article in
-                ArticleRowView(article: article)
+            ForEach(0..<articles.count, id: \.self) { index in
+                ZStack {
+                    ArticleRowView(article: articles[index])
+                    NavigationLink {
+                        ArticleDetailView(page: .withIndex(index), articles: articles)
+                    } label: {
+                        EmptyView()
+                    }
+                }
             }
             .listRowInsets(.init(top: 0.0, leading: 0.0, bottom: 16.0, trailing: 0.0))
         }

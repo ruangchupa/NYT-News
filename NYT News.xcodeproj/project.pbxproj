@@ -22,6 +22,7 @@
 		DA919EEE278E4361000B1AE0 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EED278E4361000B1AE0 /* ArticleRowView.swift */; };
 		DA919EF0278E4614000B1AE0 /* Multimedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EEF278E4614000B1AE0 /* Multimedia.swift */; };
 		DA919EF2278E4D72000B1AE0 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EF1278E4D72000B1AE0 /* ArticleListView.swift */; };
+		DA919EF4278E5324000B1AE0 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EF3278E5324000B1AE0 /* SafariView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		DA919EED278E4361000B1AE0 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
 		DA919EEF278E4614000B1AE0 /* Multimedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multimedia.swift; sourceTree = "<group>"; };
 		DA919EF1278E4D72000B1AE0 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
+		DA919EF3278E5324000B1AE0 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			children = (
 				DA919EED278E4361000B1AE0 /* ArticleRowView.swift */,
 				DA919EF1278E4D72000B1AE0 /* ArticleListView.swift */,
+				DA919EF3278E5324000B1AE0 /* SafariView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				DA919EEE278E4361000B1AE0 /* ArticleRowView.swift in Sources */,
 				DA919EBA278E34CF000B1AE0 /* Persistence.swift in Sources */,
 				DA919EE8278E3EA5000B1AE0 /* Article.swift in Sources */,
+				DA919EF4278E5324000B1AE0 /* SafariView.swift in Sources */,
 				DA919EB3278E34C8000B1AE0 /* ContentView.swift in Sources */,
 				DA919EE6278E3D74000B1AE0 /* NYTAPIResponse.swift in Sources */,
 				DA919EF0278E4614000B1AE0 /* Multimedia.swift in Sources */,

@@ -37,6 +37,7 @@ struct ArticleRowView: View {
                 }
             }
             .frame(height: 300)
+            .clipped()
             .background(Color.gray)
             
             VStack(alignment: .leading, spacing: 8.0) {

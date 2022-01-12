@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum Section: String {
+enum Section: String, CaseIterable {
+    case home
     case arts
     case automobiles
     case books
@@ -15,7 +16,6 @@ enum Section: String {
     case fashion
     case food
     case health
-    case home
     case insider
     case magazine
     case movies
@@ -28,16 +28,23 @@ enum Section: String {
     case sundayreview
     case technology
     case theater
-    case tMagazine
+    case tMagazine = "t-magazine"
     case travel
     case upshot
     case us
     case world
     
     var sectionName: String {
-        if self == .tMagazine {
-            return "t-magazine"
+        if self == .realestate {
+            return "Real Estate"
         }
-        return rawValue.lowercased()
+        if self == .sundayreview {
+            return "Sunday Review"
+        }
+        return rawValue.capitalized
     }
+}
+
+extension Section: Identifiable {
+    var id: Self { self }
 }

@@ -18,14 +18,12 @@ struct NYTAPI {
     private let jsonDecoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }()
     
-    func fetch(from section: Section = .home) async throws -> [Article] {
-        try await fetchArticles(from: generateTopStoriesURL(from: section))
-    }
-    
-    private func fetchArticles(from url: URL) async throws -> [Article] {
+    func fetchTopStories(from section: Section = .home) async throws -> [Article] {
+        let url = generateTopStoriesURL(from: section)
         let (data, response) = try await session.data(from: url)
         
         guard let response = response as? HTTPURLResponse else {
@@ -53,9 +51,9 @@ struct NYTAPI {
     }
     
     private func generateTopStoriesURL(from section: Section) -> URL {
-        var url = "\(baseURL)+/topstories/v2/\(section.sectionName).json"
+        var url = "\(baseURL)/topstories/v2/\(section.rawValue.lowercased()).json"
         
-        url += "api-key=\(apiKey)"
+        url += "?api-key=\(apiKey)"
         return URL(string: url)!
     }
 }

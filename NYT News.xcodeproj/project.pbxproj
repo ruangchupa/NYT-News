@@ -32,6 +32,7 @@
 		DA919F08278EAC2B000B1AE0 /* HomeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919F07278EAC2B000B1AE0 /* HomeTabView.swift */; };
 		DA919F0A278EB0CF000B1AE0 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919F09278EB0CE000B1AE0 /* NoDataView.swift */; };
 		DA919F0C278EB130000B1AE0 /* FailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919F0B278EB130000B1AE0 /* FailureView.swift */; };
+		DA919F0E278FC379000B1AE0 /* FavoriteArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919F0D278FC377000B1AE0 /* FavoriteArticleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		DA919F07278EAC2B000B1AE0 /* HomeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabView.swift; sourceTree = "<group>"; };
 		DA919F09278EB0CE000B1AE0 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
 		DA919F0B278EB130000B1AE0 /* FailureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureView.swift; sourceTree = "<group>"; };
+		DA919F0D278FC377000B1AE0 /* FavoriteArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteArticleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				DA919F03278EA56D000B1AE0 /* TopStoriesViewModel.swift */,
+				DA919F0D278FC377000B1AE0 /* FavoriteArticleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				DA919EE6278E3D74000B1AE0 /* NYTAPIResponse.swift in Sources */,
 				DA919EF0278E4614000B1AE0 /* Multimedia.swift in Sources */,
 				DA919EF2278E4D72000B1AE0 /* ArticleListView.swift in Sources */,
+				DA919F0E278FC379000B1AE0 /* FavoriteArticleViewModel.swift in Sources */,
 				DA919EF6278E65F5000B1AE0 /* ArticleDetailView.swift in Sources */,
 				DA919EB1278E34C8000B1AE0 /* NYT_NewsApp.swift in Sources */,
 			);

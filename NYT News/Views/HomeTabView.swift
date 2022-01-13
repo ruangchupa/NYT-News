@@ -60,6 +60,9 @@ struct HomeTabView: View {
     
     @Sendable
     private func loadTask() async {
+        if (articles.count > 0) {
+            return
+        }
         await topStoriesVM.loadArticles()
     }
     

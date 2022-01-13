@@ -20,6 +20,7 @@ struct Article {
     /// String URL of the article.
     let url: String
     
+    /// List of multimedia of the respective article.
     let multimedia: [Multimedia]?
     
     /// Publication date of the article.
@@ -30,6 +31,7 @@ struct Article {
         URL(string: url)
     }
     
+    /// URL of the article's first multimedia item.
     var articleMultimediaURL: URL? {
         if let multimedia = multimedia {
             return URL(string: multimedia[0].url)
@@ -38,6 +40,7 @@ struct Article {
         }
     }
     
+    /// Relative time of publication date to the current date.
     var relativePublicationTime: String {
         relativeDateFormatter.localizedString(for: publishedDate, relativeTo: Date())
     }

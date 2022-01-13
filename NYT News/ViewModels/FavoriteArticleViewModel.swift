@@ -10,10 +10,17 @@ import Foundation
 @MainActor
 class FavoriteArticleViewModel: ObservableObject {
     
-    @Published private(set) var favorites: [Article] = []
+    @Published private(set) var favoriteArticles: [Article] = []
+    private let favoriteArticlesDataStorage = PlistDataStorage<[Article]>(filename: "favoriteArticles")
+    
+    init() {
+        Task {
+            await loadFavoriteArticlesFromDataStorage()
+        }
+    }
     
     func isFavorited(for article: Article) -> Bool {
-        favorites.first { article.id == $0.id } != nil
+        favoriteArticles.first { article.id == $0.id } != nil
     }
     
     func addAsFavorite(for article: Article) {
@@ -21,13 +28,30 @@ class FavoriteArticleViewModel: ObservableObject {
             return
         }
 
-        favorites.insert(article, at: 0)
+        favoriteArticles.insert(article, at: 0)
+        updateFavoriteArticlesDataStorage()
     }
     
     func removeFromFavorite(for article: Article) {
-        guard let index = favorites.firstIndex(where: { $0.id == article.id }) else {
+        guard let index = favoriteArticles.firstIndex(where: {
+            $0.id == article.id
+        }) else {
             return
         }
-        favorites.remove(at: index)
+        favoriteArticles.remove(at: index)
+        updateFavoriteArticlesDataStorage()
     }
+    
+    // MARK: - Data storage related functions
+    private func updateFavoriteArticlesDataStorage() {
+        let favoriteArticles = self.favoriteArticles
+        Task {
+            await favoriteArticlesDataStorage.save(favoriteArticles)
+        }
+    }
+    
+    private func loadFavoriteArticlesFromDataStorage() async {
+        favoriteArticles = await favoriteArticlesDataStorage.load() ?? []
+    }
+    
 }

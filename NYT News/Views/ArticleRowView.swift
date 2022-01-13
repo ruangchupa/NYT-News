@@ -43,8 +43,12 @@ struct ArticleRowView: View {
             VStack(alignment: .leading, spacing: 8.0) {
                 Text(article.title)
                     .font(.headline)
+                    .lineLimit(3)
                 Text(article.abstract)
+                    .font(.subheadline)
+                    .lineLimit(3)
                 Text(article.relativePublicationTime)
+                    .foregroundColor(.secondary)
                     .font(.caption)
             }
             .padding(.init(top: 0.0, leading: 8.0, bottom: 0.0, trailing: 8.0))

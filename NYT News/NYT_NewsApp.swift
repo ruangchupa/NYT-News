@@ -11,6 +11,7 @@ import SwiftUI
 struct NYT_NewsApp: App {
     
     @StateObject var favoriteArticleVM = FavoriteArticleViewModel()
+    @StateObject var networkMonitorVM = NetworkMonitorViewModel()
     
     let persistenceController = PersistenceController.shared
 
@@ -19,6 +20,7 @@ struct NYT_NewsApp: App {
             HomeView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(favoriteArticleVM)
+                .environmentObject(networkMonitorVM)
         }
     }
     

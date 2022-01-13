@@ -10,7 +10,9 @@ import SwiftUIPager
 
 struct ArticleDetailView: View {
     @EnvironmentObject var favoriteArticleVM: FavoriteArticleViewModel
+    @EnvironmentObject var networkMonitorVM: NetworkMonitorViewModel
     @StateObject var page: Page = .first()
+    @State var noConnectionAlertIsShowing = false
     @State var article: Article
     
     let articles: [Article]
@@ -43,6 +45,17 @@ struct ArticleDetailView: View {
                     }
                 }
             }
+            .alert("Network Error",
+                   isPresented: $noConnectionAlertIsShowing,
+                   actions: {
+                Button("OK", role: .cancel, action: {})
+            },
+                   message: {
+                    Text("Unable to contact the server")
+                })
+            .onChange(of: networkMonitorVM.status) { _ in
+                checkNetworkConnectionForAlert()
+            }
     }
     
     private func toggleFavorite(for article: Article) {
@@ -50,6 +63,14 @@ struct ArticleDetailView: View {
             favoriteArticleVM.removeFromFavorite(for: article)
         } else {
             favoriteArticleVM.addAsFavorite(for: article)
+        }
+    }
+    
+    private func checkNetworkConnectionForAlert() {
+        if (networkMonitorVM.status == .disconnected) {
+            noConnectionAlertIsShowing = true
+        } else {
+            noConnectionAlertIsShowing = false
         }
     }
 }

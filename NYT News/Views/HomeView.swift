@@ -10,7 +10,9 @@ import CoreData
 
 struct HomeView: View {
     
+    @EnvironmentObject var networkMonitorVM: NetworkMonitorViewModel
     @StateObject var topStoriesVM = TopStoriesViewModel()
+    @State var noConnectionAlertIsShowing = false
     
     private var articles: [Article] {
         if case let .success(articles) = topStoriesVM.phase {
@@ -29,6 +31,17 @@ struct HomeView: View {
                 .navigationTitle(topStoriesVM.fetchTaskToken.section.sectionName)
                 .navigationBarItems(trailing: menu)
         }
+        .alert("Network Error",
+               isPresented: $noConnectionAlertIsShowing,
+               actions: {
+            Button("Retry", role: .cancel, action: refreshTask)
+        },
+               message: {
+                Text("Unable to contact the server")
+            })
+        .onChange(of: networkMonitorVM.status) { _ in
+            checkNetworkConnectionForAlert()
+        }
     }
     
     @ViewBuilder
@@ -36,24 +49,7 @@ struct HomeView: View {
         
         switch topStoriesVM.phase {
         case .fetching:
-            VStack(alignment: .center, spacing: 16.0) {
-                Spacer()
-                ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
-                Text("Please wait").foregroundColor(.white)
-                Spacer()
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            .background(.black)
-            .opacity(0.8)
-            .alert("Network Error",
-                   isPresented: $topStoriesVM.noInternetConnection,
-                   actions: {
-                Button("Retry", role: .cancel, action: refreshTask)
-            },
-                   message: {
-                    Text("Unable to contact the server")
-                })
+            FetchingView()
         case .success(let articles) where articles.isEmpty:
             NoDataView(text: "No News Found", image: Image(systemName: "newspaper"))
         case .failure(let error):
@@ -84,7 +80,16 @@ struct HomeView: View {
     @Sendable
     private func refreshTask() {
         DispatchQueue.main.async {
+            checkNetworkConnectionForAlert()
             topStoriesVM.fetchTaskToken = ArticleListFetchTaskToken(section: topStoriesVM.fetchTaskToken.section, token: Date())
+        }
+    }
+    
+    private func checkNetworkConnectionForAlert() {
+        if (networkMonitorVM.status == .disconnected) {
+            noConnectionAlertIsShowing = true
+        } else {
+            noConnectionAlertIsShowing = false
         }
     }
 

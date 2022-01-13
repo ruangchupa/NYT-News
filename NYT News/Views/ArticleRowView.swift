@@ -6,39 +6,31 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct ArticleRowView: View {
     let article: Article
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16.0) {
-            AsyncImage(url: article.articleMultimediaURL) { phase in
-                switch phase {
-                case .empty:
-                    HStack {
-                        Spacer()
-                        ProgressView()
-                        Spacer()
-                    }
-                case .success(let image):
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                case .failure:
-                    HStack {
-                        Spacer()
-                        Image(systemName: "photo")
-                        Spacer()
-                    }
-                    
-                
-                @unknown default:
-                    fatalError()
+        VStack(alignment: .leading, spacing: 8.0) {
+            WebImage(url: article.articleMultimediaURL)
+                .resizable()
+                .placeholder{
+                    Image(systemName: "photo")
+                        .frame(
+                            minWidth: 0,
+                            maxWidth: .infinity,
+                            minHeight: 0,
+                            maxHeight: 300,
+                            alignment: .center
+                          )
                 }
-            }
-            .frame(height: 300)
-            .clipped()
-            .background(Color.gray)
+                .indicator(.activity)
+                .transition(.fade(duration: 0.5))
+                .scaledToFill()
+                .frame(height: 300, alignment: .center)
+                .clipped()
+                .background(Color.gray.opacity(0.4))
             
             VStack(alignment: .leading, spacing: 8.0) {
                 Text(article.title)

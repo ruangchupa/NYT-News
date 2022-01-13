@@ -33,6 +33,7 @@
 		DA919F0C278EB130000B1AE0 /* FailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919F0B278EB130000B1AE0 /* FailureView.swift */; };
 		DA919F0E278FC379000B1AE0 /* FavoriteArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919F0D278FC377000B1AE0 /* FavoriteArticleViewModel.swift */; };
 		DAE3B14E278FFF3F00E7D93E /* NYTDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3B14D278FFF3F00E7D93E /* NYTDataStorage.swift */; };
+		DAE3B15127902DB700E7D93E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DAE3B15027902DB700E7D93E /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE3B15127902DB700E7D93E /* SDWebImageSwiftUI in Frameworks */,
 				DA919EF9278E66A9000B1AE0 /* SwiftUIPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +261,7 @@
 			name = "NYT News";
 			packageProductDependencies = (
 				DA919EF8278E66A9000B1AE0 /* SwiftUIPager */,
+				DAE3B15027902DB700E7D93E /* SDWebImageSwiftUI */,
 			);
 			productName = "NYT News";
 			productReference = DA919EAD278E34C8000B1AE0 /* NYT News.app */;
@@ -334,6 +337,7 @@
 			mainGroup = DA919EA4278E34C8000B1AE0;
 			packageReferences = (
 				DA919EF7278E66A8000B1AE0 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
+				DAE3B14F27902DB700E7D93E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = DA919EAE278E34C8000B1AE0 /* Products */;
 			projectDirPath = "";
@@ -737,6 +741,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		DAE3B14F27902DB700E7D93E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -744,6 +756,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DA919EF7278E66A8000B1AE0 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
 			productName = SwiftUIPager;
+		};
+		DAE3B15027902DB700E7D93E /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAE3B14F27902DB700E7D93E /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 

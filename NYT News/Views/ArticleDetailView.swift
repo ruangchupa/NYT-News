@@ -28,6 +28,7 @@ struct ArticleDetailView: View {
                 article = articles[index]
             })
             .sensitivity(.high)
+            .edgesIgnoringSafeArea(.bottom)
             .toolbar {
                 HStack(spacing: 16.0) {
                     Button {
@@ -54,9 +55,12 @@ struct ArticleDetailView: View {
 }
 
 struct ArticleDetailView_Previews: PreviewProvider {
+    @StateObject static var favoriteArticleVM = FavoriteArticleViewModel()
+    
     static var previews: some View {
         NavigationView {
             ArticleDetailView(article: Article.previewData[0], articles: Article.previewData)
+                .environmentObject(favoriteArticleVM)
         }
     }
 }

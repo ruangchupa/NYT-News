@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct HomeTabView: View {
     
@@ -77,6 +78,6 @@ struct HomeTabView: View {
 
 struct HomeTabView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeTabView()
+        HomeTabView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

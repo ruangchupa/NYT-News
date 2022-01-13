@@ -13,11 +13,14 @@ struct FailureView: View {
     
     var body: some View {
         VStack(spacing: 8) {
-            Text(text)
+            Text(text).foregroundColor(.white)
             Button(action: retryAction) {
                 Text("Try again")
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+        .background(.black)
+        .opacity(0.8)
     }
 }
 

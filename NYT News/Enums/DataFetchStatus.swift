@@ -10,13 +10,13 @@ import Foundation
 /// Defining the status of data fetching.
 enum DataFetchStatus<T> {
     
-    /// The data is fetching
+    /// The data is fetching.
     case fetching
     
-    /// The data has been successfully fetched
+    /// The data has been successfully fetched.
     case success(T)
     
-    /// Error occured when fetching
+    /// Error occured when fetching.
     case failure(Error)
     
 }

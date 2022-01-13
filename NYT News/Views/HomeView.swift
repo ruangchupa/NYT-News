@@ -46,8 +46,16 @@ struct HomeView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .background(.black)
             .opacity(0.8)
+            .alert("Network Error",
+                   isPresented: $topStoriesVM.noInternetConnection,
+                   actions: {
+                Button("Retry", role: .cancel, action: refreshTask)
+            },
+                   message: {
+                    Text("Unable to contact the server")
+                })
         case .success(let articles) where articles.isEmpty:
-            NoDataView(text: "There's no article available", image: nil)
+            NoDataView(text: "No News Found", image: Image(systemName: "newspaper"))
         case .failure(let error):
             FailureView(text: error.localizedDescription, retryAction: refreshTask)
         default: EmptyView()

@@ -17,6 +17,7 @@ class TopStoriesViewModel: ObservableObject {
     
     @Published var phase = DataFetchStatus<[Article]>.fetching
     @Published var fetchTaskToken: ArticleListFetchTaskToken
+    @Published var noInternetConnection = false
     
     private let nytAPI = NYTAPI.shared
     
@@ -40,7 +41,12 @@ class TopStoriesViewModel: ObservableObject {
         } catch {
             if Task.isCancelled { return }
             print(error.localizedDescription)
-            phase = .failure(error)
+            switch error._code {
+            case -1009:
+                noInternetConnection = true
+            default:
+                phase = .failure(error)
+            }
         }
     }
 }

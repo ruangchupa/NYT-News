@@ -16,7 +16,7 @@ struct HomeView: View {
         if case let .success(articles) = topStoriesVM.phase {
             return articles
         } else {
-            return []
+            return Article.previewData
         }
     }
     
@@ -36,7 +36,16 @@ struct HomeView: View {
         
         switch topStoriesVM.phase {
         case .fetching:
-            ProgressView()
+            VStack(alignment: .center, spacing: 16.0) {
+                Spacer()
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                Text("Please wait").foregroundColor(.white)
+                Spacer()
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            .background(.black)
+            .opacity(0.8)
         case .success(let articles) where articles.isEmpty:
             NoDataView(text: "There's no article available", image: nil)
         case .failure(let error):

@@ -18,10 +18,10 @@ struct ArticleRowView: View {
                 .placeholder{
                     Image(systemName: "photo")
                         .frame(
-                            minWidth: 0,
+                            minWidth: 0.0,
                             maxWidth: .infinity,
-                            minHeight: 0,
-                            maxHeight: 300,
+                            minHeight: 0.0,
+                            maxHeight: 300.0,
                             alignment: .center
                           )
                 }

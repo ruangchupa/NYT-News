@@ -1,5 +1,5 @@
 //
-//  EmptyView.swift
+//  NoDataView.swift
 //  NYT News
 //
 //  Created by Muhammad Yusuf  on 12/01/22.

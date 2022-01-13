@@ -16,7 +16,7 @@ struct NYT_NewsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeTabView()
+            HomeView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(favoriteArticleVM)
         }

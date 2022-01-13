@@ -1,5 +1,5 @@
 //
-//  HomeTabView.swift
+//  HomeView.swift
 //  NYT News
 //
 //  Created by Muhammad Yusuf  on 12/01/22.
@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct HomeTabView: View {
+struct HomeView: View {
     
     @StateObject var topStoriesVM = TopStoriesViewModel()
     
@@ -78,6 +78,6 @@ struct HomeTabView: View {
 
 struct HomeTabView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeTabView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        HomeView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

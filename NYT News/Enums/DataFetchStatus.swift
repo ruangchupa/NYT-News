@@ -8,13 +8,13 @@
 import Foundation
 
 /// Defining the status of data fetching.
-enum DataFetchStatus<T> {
+enum DataFetchStatus {
     
     /// The data is fetching.
     case fetching
     
     /// The data has been successfully fetched.
-    case success(T)
+    case success
     
     /// Error occured when fetching.
     case failure(Error)

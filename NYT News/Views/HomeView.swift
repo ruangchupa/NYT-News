@@ -14,17 +14,9 @@ struct HomeView: View {
     @StateObject var topStoriesVM = TopStoriesViewModel()
     @State var noConnectionAlertIsShowing = false
     
-    private var articles: [Article] {
-        if case let .success(articles) = topStoriesVM.phase {
-            return articles
-        } else {
-            return Article.previewData
-        }
-    }
-    
     var body: some View {
         NavigationView {
-            ArticleListView(articles: articles)
+            ArticleListView(articles: topStoriesVM.articles)
                 .overlay(overlayView)
                 .task(id: topStoriesVM.fetchTaskToken, loadTask)
                 .refreshable(action: refreshTask)
@@ -50,11 +42,14 @@ struct HomeView: View {
         switch topStoriesVM.phase {
         case .fetching:
             FetchingView()
-        case .success(let articles) where articles.isEmpty:
-            NoDataView(text: "No News Found", image: Image(systemName: "newspaper"))
+        case .success:
+            if (topStoriesVM.articles.isEmpty) {
+                NoDataView(text: "No News Found", image: Image(systemName: "newspaper"))
+            } else {
+                EmptyView()
+            }
         case .failure(let error):
             FailureView(text: error.localizedDescription, retryAction: refreshTask)
-        default: EmptyView()
         }
     }
     
@@ -74,7 +69,7 @@ struct HomeView: View {
     
     @Sendable
     private func loadTask() async {
-        await topStoriesVM.loadArticles()
+        await topStoriesVM.loadArticlesFromWebService()
     }
     
     @Sendable

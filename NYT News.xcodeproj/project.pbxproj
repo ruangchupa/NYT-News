@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA4444FF2790FB2000B7345E /* TopStoriesHome_SuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = DA919EE2278E3BA7000B1AE0 /* TopStoriesHome_SuccessResponse.json */; };
+		DA4445052791071000B7345E /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3B16B2790F40200E7D93E /* HTTPStatusCode.swift */; };
 		DA919EB1278E34C8000B1AE0 /* NYT_NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EB0278E34C8000B1AE0 /* NYT_NewsApp.swift */; };
 		DA919EB5278E34CF000B1AE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA919EB4278E34CF000B1AE0 /* Assets.xcassets */; };
 		DA919EB8278E34CF000B1AE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA919EB7278E34CF000B1AE0 /* Preview Assets.xcassets */; };
@@ -451,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA4445052791071000B7345E /* HTTPStatusCode.swift in Sources */,
 				DAE3B16027908F7A00E7D93E /* Multimedia.swift in Sources */,
 				DAE3B15E27908F4900E7D93E /* Article.swift in Sources */,
 				DAE3B15D27908F4500E7D93E /* Section.swift in Sources */,

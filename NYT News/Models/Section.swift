@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Defines article sections on New York Times.
 enum Section: String, CaseIterable {
     case home
     case arts
@@ -34,6 +35,7 @@ enum Section: String, CaseIterable {
     case us
     case world
     
+    /// String preferred for section title on the screen.
     var sectionName: String {
         if self == .realestate {
             return "Real Estate"

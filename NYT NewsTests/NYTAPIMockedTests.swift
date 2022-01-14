@@ -14,8 +14,6 @@ class NYTAPIMockedTests: XCTestCase {
     var sut: NYTAPI!
     
     override func setUpWithError() throws {
-        try super.setUpWithError()
-        
         let configuration = URLSessionConfiguration.default
         configuration.protocolClasses = [MockingURLProtocol.self] + (configuration.protocolClasses ?? [])
         let sessionManager = URLSession(configuration: configuration)

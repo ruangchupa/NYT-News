@@ -2,6 +2,16 @@
 
 iOS app displaying New York Times top stories.
 
+## Features
+* Shows articles from various sections of New York Times top stories.
+* Open each article as a web page (I couldn't find article detail API so I show the news url as a web page instead).
+* Navigate between articles by swiping.
+* Save article as favorite.
+* Caching on article list and images.
+![Simulator Screen Shot - iPhone 13 - 2022-01-14 at 14 40 29](https://user-images.githubusercontent.com/5801461/149469713-14c9fedd-746a-48d2-a7f2-7ee7c7056849.png)
+![Simulator Screen Shot - iPhone 13 - 2022-01-14 at 14 40 59](https://user-images.githubusercontent.com/5801461/149469770-057be3c9-f20c-4140-a9b0-06eb943ed254.png)
+![Simulator Screen Shot - iPhone 13 - 2022-01-14 at 14 41 51](https://user-images.githubusercontent.com/5801461/149469870-e5cb3459-4c1d-413e-8f6c-4c6ef343586e.png)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.

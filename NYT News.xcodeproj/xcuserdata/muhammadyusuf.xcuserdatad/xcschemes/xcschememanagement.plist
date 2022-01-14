@@ -7,7 +7,25 @@
 		<key>NYT News.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>DA919EAC278E34C8000B1AE0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA919EC1278E34D0000B1AE0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA919ECB278E34D0000B1AE0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

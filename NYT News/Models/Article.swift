@@ -59,7 +59,7 @@ extension Article: Identifiable {
 /// Extension for providing preview data for Article.
 extension Article {
     static var previewData: [Article] {
-        let previewDataURL = Bundle.main.url(forResource: "MostPopularHomeJSON", withExtension: "json")!
+        let previewDataURL = Bundle.main.url(forResource: "TopStoriesHome_SuccessResponse", withExtension: "json")!
         
         let data = try! Data(contentsOf: previewDataURL)
         

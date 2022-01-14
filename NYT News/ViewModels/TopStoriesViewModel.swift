@@ -19,7 +19,7 @@ class TopStoriesViewModel: ObservableObject {
     @Published var fetchTaskToken: ArticleListFetchTaskToken
     @Published var noInternetConnection = false
     
-    private let nytAPI = NYTAPI.shared
+    private let nytAPI = NYTAPI()
     
     init(articles: [Article]? = nil, selectedSection: Section = .home) {
         if let articles = articles {

@@ -11,7 +11,7 @@ import SwiftUI
 class DeepLinkManager {
     enum DeepLink: Equatable {
         case home
-        case details(reference: String)
+        case details(articleURL: String)
     }
     
     func manage(url: URL) -> DeepLink? {
@@ -23,7 +23,7 @@ class DeepLinkManager {
         guard let idIndex = components.firstIndex(of: Substring(URL.appReferenceQueryName)) else { return nil }
         guard idIndex + 1 < components.count else { return nil }
         guard let decodedURLReference = String(components[idIndex.advanced(by: 1)]).decodeUrl() else { return nil }
-        return .details(reference: decodedURLReference)
+        return .details(articleURL: decodedURLReference)
     }
 }
 

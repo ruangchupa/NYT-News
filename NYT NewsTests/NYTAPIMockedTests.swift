@@ -49,12 +49,30 @@ class NYTAPIMockedTests: XCTestCase {
         // 3. then
         wait(for: [promise], timeout: 5)
     }
+    
+    func testGetTopStoriesOfHomeSectionWithInvalidAPIKeyGetsClientError() async throws {
+        // 1. given
+        let promise = expectation(description: "Gets client error response")
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let mock = Mock(url: Endpoints.generateTopStoriesURL(from: .home),
+                        dataType: .json,
+                        statusCode: HTTPStatusCode.unauthorized.rawValue,
+                        data: [.get: MockData.topStoriesHomeNoAPIKeyJSON.data])
+        mock.register()
+
+        // 2. when
+        do {
+            _ = try await sut.fetchTopStories(from: .home)
+            if Task.isCancelled { return }
+            XCTFail("Returns success when it should be error.")
+        } catch {
+            if Task.isCancelled { return }
+            XCTAssert(true)
+            promise.fulfill()
         }
+
+        // 3. then
+        wait(for: [promise], timeout: 5)
     }
 
 }

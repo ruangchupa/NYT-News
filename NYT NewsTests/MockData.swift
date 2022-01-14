@@ -10,6 +10,8 @@ import Foundation
 class MockData {
     static let topStoriesHomeSuccessJSON: URL = Bundle(for: MockData.self)
         .url(forResource: "TopStoriesHome_SuccessResponse", withExtension: "json")!
+    static let topStoriesHomeNoAPIKeyJSON: URL = Bundle(for: MockData.self)
+        .url(forResource: "TopStoriesHome_NoAPIKeyResponse", withExtension: "json")!
 }
 
 internal extension URL {

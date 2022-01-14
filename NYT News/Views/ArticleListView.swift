@@ -41,8 +41,8 @@ struct ArticleListView: View {
         .onChange(of: deepLink, perform: { deepLink in
                     guard let deepLink = deepLink else { return }
                     switch deepLink {
-                    case .details(let reference):
-                        articleURL = reference
+                    case .details(let articleURL):
+                        self.articleURL = articleURL
                         isShowingDetailView = true
                     case .home:
                         break

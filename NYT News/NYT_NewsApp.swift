@@ -19,7 +19,6 @@ struct NYT_NewsApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environment(\.deepLink, deepLink)
                 .environmentObject(favoriteArticleVM)
                 .environmentObject(networkMonitorVM)

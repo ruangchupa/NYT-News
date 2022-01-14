@@ -43,9 +43,3 @@ extension EnvironmentValues {
         }
     }
 }
-
-internal extension URL {
-    static let appScheme = "nytnewsapp"
-    static let appDetailsPath = "details"
-    static let appReferenceQueryName = "reference"
-}

@@ -28,7 +28,7 @@ struct ArticleDetailView: View {
                         Image(systemName: favoriteArticleVM.isFavorited(forArticleWithStringURL: articleStringURL) ? "star.fill" : "star")
                     }
                     Button {
-                        print("Share tapped!")
+                        share(forArticleWithStringURL: articleStringURL)
                     } label: {
                         Image(systemName: "square.and.arrow.up")
                     }
@@ -44,52 +44,6 @@ struct ArticleDetailView: View {
                 })
             .onChange(of: networkMonitorVM.status) { _ in
                 checkNetworkConnectionForAlert()
-//        if fromDeepLink {
-//            if let articleURL = URL(string: articleStringURL) {
-//                SafariView(url: articleURL)
-//                    .edgesIgnoringSafeArea(.bottom)
-//            } else {
-//                EmptyView()
-//            }
-//        } else {
-//            Pager(page: page,
-//                  data: articles,
-//                  id: \.id,
-//                  content: { article in
-//                if let articleURL = article.articleURL {
-//                    SafariView(url: articleURL)
-//                }
-//             })
-//                .onPageChanged({ index in
-//                    articleStringURL = articles[index].url
-//                })
-//                .sensitivity(.high)
-//                .edgesIgnoringSafeArea(.bottom)
-//                .toolbar {
-//                    HStack(spacing: 16.0) {
-//                        Button {
-//                            toggleFavorite(forArticleWithStringURL: articleStringURL)
-//                        } label: {
-//                            Image(systemName: favoriteArticleVM.isFavorited(forArticleWithStringURL: articleStringURL) ? "star.fill" : "star")
-//                        }
-//                        Button {
-//                            print("Share tapped!")
-//                        } label: {
-//                            Image(systemName: "square.and.arrow.up")
-//                        }
-//                    }
-//                }
-//                .alert("Network Error",
-//                       isPresented: $noConnectionAlertIsShowing,
-//                       actions: {
-//                    Button("OK", role: .cancel, action: {})
-//                },
-//                       message: {
-//                        Text("Unable to contact the server")
-//                    })
-//                .onChange(of: networkMonitorVM.status) { _ in
-//                    checkNetworkConnectionForAlert()
-//            }
         }
     }
     
@@ -100,6 +54,15 @@ struct ArticleDetailView: View {
             favoriteArticleVM.addAsFavorite(forArticleWithStringURL: stringURL)
         }
     }
+    
+    private func share(forArticleWithStringURL stringURL: String) {
+        guard let encodedStringURL = stringURL.encodeUrl() else {
+            return
+        }
+        guard let data = URL(string: "\(URL.appScheme)://nytimes.com/\(URL.appDetailsPath)?\(URL.appReferenceQueryName)=\(encodedStringURL)") else { return }
+           let av = UIActivityViewController(activityItems: [data], applicationActivities: nil)
+        UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+       }
     
     private func checkNetworkConnectionForAlert() {
         if (networkMonitorVM.status == .disconnected) {

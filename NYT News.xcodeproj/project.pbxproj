@@ -35,7 +35,6 @@
 		DA919F0C278EB130000B1AE0 /* FailureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919F0B278EB130000B1AE0 /* FailureView.swift */; };
 		DA919F0E278FC379000B1AE0 /* FavoriteArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919F0D278FC377000B1AE0 /* FavoriteArticleViewModel.swift */; };
 		DAC4F11127911F15007DE983 /* DeepLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4F11027911F15007DE983 /* DeepLinkManager.swift */; };
-		DAC4F11327912ECF007DE983 /* ArticleSimpleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC4F11227912ECF007DE983 /* ArticleSimpleDetailView.swift */; };
 		DAE3B14E278FFF3F00E7D93E /* NYTDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3B14D278FFF3F00E7D93E /* NYTDataStorage.swift */; };
 		DAE3B15127902DB700E7D93E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = DAE3B15027902DB700E7D93E /* SDWebImageSwiftUI */; };
 		DAE3B15327903EF200E7D93E /* NetworkMonitorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3B15227903EF100E7D93E /* NetworkMonitorViewModel.swift */; };
@@ -53,6 +52,7 @@
 		DAE3B16D2790F63A00E7D93E /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE3B1672790F18300E7D93E /* Endpoints.swift */; };
 		DAFD27B42791366000EF18EF /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD27B32791366000EF18EF /* String+Extensions.swift */; };
 		DAFD27B62791440500EF18EF /* ArticleDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD27B52791440400EF18EF /* ArticleDetailContentView.swift */; };
+		DAFD27B827914B7500EF18EF /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD27B727914B7500EF18EF /* URL+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +102,6 @@
 		DA919F0B278EB130000B1AE0 /* FailureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureView.swift; sourceTree = "<group>"; };
 		DA919F0D278FC377000B1AE0 /* FavoriteArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteArticleViewModel.swift; sourceTree = "<group>"; };
 		DAC4F11027911F15007DE983 /* DeepLinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkManager.swift; sourceTree = "<group>"; };
-		DAC4F11227912ECF007DE983 /* ArticleSimpleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleSimpleDetailView.swift; sourceTree = "<group>"; };
 		DAE3B14D278FFF3F00E7D93E /* NYTDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTDataStorage.swift; sourceTree = "<group>"; };
 		DAE3B15227903EF100E7D93E /* NetworkMonitorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorViewModel.swift; sourceTree = "<group>"; };
 		DAE3B15427906B3700E7D93E /* FetchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingView.swift; sourceTree = "<group>"; };
@@ -112,6 +111,7 @@
 		DAE3B16B2790F40200E7D93E /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		DAFD27B32791366000EF18EF /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		DAFD27B52791440400EF18EF /* ArticleDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailContentView.swift; sourceTree = "<group>"; };
+		DAFD27B727914B7500EF18EF /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +167,6 @@
 		DA919EAF278E34C8000B1AE0 /* NYT News */ = {
 			isa = PBXGroup;
 			children = (
-				DAC4F114279133DA007DE983 /* Extensions */,
 				DA919EE4278E3BFF000B1AE0 /* NYT-News-Info.plist */,
 				DA919EB0278E34C8000B1AE0 /* NYT_NewsApp.swift */,
 				DAC4F11027911F15007DE983 /* DeepLinkManager.swift */,
@@ -175,6 +174,7 @@
 				DA919EE9278E4314000B1AE0 /* Views */,
 				DA919EFF278EA319000B1AE0 /* ViewModels */,
 				DA919EFA278E6F1B000B1AE0 /* Services */,
+				DAC4F114279133DA007DE983 /* Extensions */,
 				DA919F00278EA3DD000B1AE0 /* Enums */,
 				DA919EB4278E34CF000B1AE0 /* Assets.xcassets */,
 				DA919EB9278E34CF000B1AE0 /* Persistence.swift */,
@@ -246,7 +246,6 @@
 				DA919EF1278E4D72000B1AE0 /* ArticleListView.swift */,
 				DA919EF5278E65F5000B1AE0 /* ArticleDetailView.swift */,
 				DAFD27B52791440400EF18EF /* ArticleDetailContentView.swift */,
-				DAC4F11227912ECF007DE983 /* ArticleSimpleDetailView.swift */,
 				DA919EF3278E5324000B1AE0 /* SafariView.swift */,
 				DAE3B15427906B3700E7D93E /* FetchingView.swift */,
 				DA919F09278EB0CE000B1AE0 /* NoDataView.swift */,
@@ -288,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				DAFD27B32791366000EF18EF /* String+Extensions.swift */,
+				DAFD27B727914B7500EF18EF /* URL+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -442,7 +442,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC4F11327912ECF007DE983 /* ArticleSimpleDetailView.swift in Sources */,
 				DA919EFC278E6FB2000B1AE0 /* NYTAPI.swift in Sources */,
 				DA919EBD278E34CF000B1AE0 /* NYT_News.xcdatamodeld in Sources */,
 				DA919F02278EA40C000B1AE0 /* DataFetchStatus.swift in Sources */,
@@ -465,6 +464,7 @@
 				DA919F0E278FC379000B1AE0 /* FavoriteArticleViewModel.swift in Sources */,
 				DAE3B16C2790F40200E7D93E /* HTTPStatusCode.swift in Sources */,
 				DA919EF6278E65F5000B1AE0 /* ArticleDetailView.swift in Sources */,
+				DAFD27B827914B7500EF18EF /* URL+Extensions.swift in Sources */,
 				DA919EB1278E34C8000B1AE0 /* NYT_NewsApp.swift in Sources */,
 				DAE3B14E278FFF3F00E7D93E /* NYTDataStorage.swift in Sources */,
 				DAE3B15527906B3700E7D93E /* FetchingView.swift in Sources */,

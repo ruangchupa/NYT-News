@@ -56,6 +56,7 @@
 		DAFD27BA27914F2D00EF18EF /* TopStoriesHome_NoAPIKeyResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = DAFD27B927914F2D00EF18EF /* TopStoriesHome_NoAPIKeyResponse.json */; };
 		DAFD27BB279150A300EF18EF /* TopStoriesHome_NoAPIKeyResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = DAFD27B927914F2D00EF18EF /* TopStoriesHome_NoAPIKeyResponse.json */; };
 		DAFD27BD2791515A00EF18EF /* DeepLinkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFD27BC2791515A00EF18EF /* DeepLinkManagerTests.swift */; };
+		DAFD27BF2791576000EF18EF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DAFD27BE2791576000EF18EF /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		DAFD27B727914B7500EF18EF /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		DAFD27B927914F2D00EF18EF /* TopStoriesHome_NoAPIKeyResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TopStoriesHome_NoAPIKeyResponse.json; sourceTree = "<group>"; };
 		DAFD27BC2791515A00EF18EF /* DeepLinkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkManagerTests.swift; sourceTree = "<group>"; };
+		DAFD27BE2791576000EF18EF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		DA919EA4278E34C8000B1AE0 = {
 			isa = PBXGroup;
 			children = (
+				DAFD27BE2791576000EF18EF /* README.md */,
 				DA919EAF278E34C8000B1AE0 /* NYT News */,
 				DA919EC5278E34D0000B1AE0 /* NYT NewsTests */,
 				DA919ECF278E34D0000B1AE0 /* NYT NewsUITests */,
@@ -423,6 +426,7 @@
 			files = (
 				DA919EB8278E34CF000B1AE0 /* Preview Assets.xcassets in Resources */,
 				DA919EB5278E34CF000B1AE0 /* Assets.xcassets in Resources */,
+				DAFD27BF2791576000EF18EF /* README.md in Resources */,
 				DAFD27BA27914F2D00EF18EF /* TopStoriesHome_NoAPIKeyResponse.json in Resources */,
 				DA919EE3278E3BA8000B1AE0 /* TopStoriesHome_SuccessResponse.json in Resources */,
 			);

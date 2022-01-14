@@ -12,8 +12,6 @@
 		DA919EB1278E34C8000B1AE0 /* NYT_NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EB0278E34C8000B1AE0 /* NYT_NewsApp.swift */; };
 		DA919EB5278E34CF000B1AE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA919EB4278E34CF000B1AE0 /* Assets.xcassets */; };
 		DA919EB8278E34CF000B1AE0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA919EB7278E34CF000B1AE0 /* Preview Assets.xcassets */; };
-		DA919EBA278E34CF000B1AE0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EB9278E34CF000B1AE0 /* Persistence.swift */; };
-		DA919EBD278E34CF000B1AE0 /* NYT_News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA919EBB278E34CF000B1AE0 /* NYT_News.xcdatamodeld */; };
 		DA919EC7278E34D0000B1AE0 /* NYTAPIMockedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919EC6278E34D0000B1AE0 /* NYTAPIMockedTests.swift */; };
 		DA919ED1278E34D0000B1AE0 /* NYT_NewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919ED0278E34D0000B1AE0 /* NYT_NewsUITests.swift */; };
 		DA919ED3278E34D0000B1AE0 /* NYT_NewsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA919ED2278E34D0000B1AE0 /* NYT_NewsUITestsLaunchTests.swift */; };
@@ -81,8 +79,6 @@
 		DA919EB0278E34C8000B1AE0 /* NYT_NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYT_NewsApp.swift; sourceTree = "<group>"; };
 		DA919EB4278E34CF000B1AE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA919EB7278E34CF000B1AE0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		DA919EB9278E34CF000B1AE0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		DA919EBC278E34CF000B1AE0 /* NYT_News.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NYT_News.xcdatamodel; sourceTree = "<group>"; };
 		DA919EC2278E34D0000B1AE0 /* NYT NewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NYT NewsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA919EC6278E34D0000B1AE0 /* NYTAPIMockedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTAPIMockedTests.swift; sourceTree = "<group>"; };
 		DA919ECC278E34D0000B1AE0 /* NYT NewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NYT NewsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,8 +181,6 @@
 				DAC4F114279133DA007DE983 /* Extensions */,
 				DA919F00278EA3DD000B1AE0 /* Enums */,
 				DA919EB4278E34CF000B1AE0 /* Assets.xcassets */,
-				DA919EB9278E34CF000B1AE0 /* Persistence.swift */,
-				DA919EBB278E34CF000B1AE0 /* NYT_News.xcdatamodeld */,
 				DA919EE0278E3509000B1AE0 /* Resources */,
 				DA919EB6278E34CF000B1AE0 /* Preview Content */,
 			);
@@ -456,11 +450,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA919EFC278E6FB2000B1AE0 /* NYTAPI.swift in Sources */,
-				DA919EBD278E34CF000B1AE0 /* NYT_News.xcdatamodeld in Sources */,
 				DA919F02278EA40C000B1AE0 /* DataFetchStatus.swift in Sources */,
 				DA919EEE278E4361000B1AE0 /* ArticleRowView.swift in Sources */,
 				DA919F04278EA56D000B1AE0 /* TopStoriesViewModel.swift in Sources */,
-				DA919EBA278E34CF000B1AE0 /* Persistence.swift in Sources */,
 				DA919EE8278E3EA5000B1AE0 /* Article.swift in Sources */,
 				DA919F0C278EB130000B1AE0 /* FailureView.swift in Sources */,
 				DA919F0A278EB0CF000B1AE0 /* NoDataView.swift in Sources */,
@@ -648,6 +640,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NYT News/Preview Content\"";
@@ -659,6 +652,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				MARKETING_VERSION = 1.0;
@@ -670,7 +664,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -679,6 +673,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 422VTFJDZT;
@@ -689,6 +684,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				MARKETING_VERSION = 1.0;
@@ -700,7 +696,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -865,19 +861,6 @@
 			productName = Mocker;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		DA919EBB278E34CF000B1AE0 /* NYT_News.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DA919EBC278E34CF000B1AE0 /* NYT_News.xcdatamodel */,
-			);
-			currentVersion = DA919EBC278E34CF000B1AE0 /* NYT_News.xcdatamodel */;
-			path = NYT_News.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = DA919EA5278E34C8000B1AE0 /* Project object */;
 }

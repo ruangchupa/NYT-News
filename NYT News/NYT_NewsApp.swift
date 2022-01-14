@@ -13,8 +13,6 @@ struct NYT_NewsApp: App {
     @StateObject var favoriteArticleVM = FavoriteArticleViewModel()
     @StateObject var networkMonitorVM = NetworkMonitorViewModel()
     @State var deepLink: DeepLinkManager.DeepLink?
-    
-    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {

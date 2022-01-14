@@ -10,8 +10,8 @@ import Foundation
 @MainActor
 class FavoriteArticleViewModel: ObservableObject {
     
-    @Published private(set) var favoriteArticles: [Article] = []
-    private let favoriteArticlesDataStorage = PlistDataStorage<[Article]>(filename: "favoriteArticles")
+    @Published private(set) var favoriteArticles: [String] = []
+    private let favoriteArticlesDataStorage = PlistDataStorage<[String]>(filename: "favoriteArticles")
     
     init() {
         Task {
@@ -19,22 +19,22 @@ class FavoriteArticleViewModel: ObservableObject {
         }
     }
     
-    func isFavorited(for article: Article) -> Bool {
-        favoriteArticles.first { article.id == $0.id } != nil
+    func isFavorited(forArticleWithStringURL stringURL: String) -> Bool {
+        favoriteArticles.first { stringURL == $0 } != nil
     }
     
-    func addAsFavorite(for article: Article) {
-        guard !isFavorited(for: article) else {
+    func addAsFavorite(forArticleWithStringURL stringURL: String) {
+        guard !isFavorited(forArticleWithStringURL: stringURL) else {
             return
         }
 
-        favoriteArticles.insert(article, at: 0)
+        favoriteArticles.insert(stringURL, at: 0)
         updateFavoriteArticlesDataStorage()
     }
     
-    func removeFromFavorite(for article: Article) {
+    func removeFromFavorite(forArticleWithStringURL stringURL: String) {
         guard let index = favoriteArticles.firstIndex(where: {
-            $0.id == article.id
+            $0 == stringURL
         }) else {
             return
         }

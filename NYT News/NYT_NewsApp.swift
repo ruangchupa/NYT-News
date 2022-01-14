@@ -12,6 +12,7 @@ struct NYT_NewsApp: App {
     
     @StateObject var favoriteArticleVM = FavoriteArticleViewModel()
     @StateObject var networkMonitorVM = NetworkMonitorViewModel()
+    @State var deepLink: DeepLinkManager.DeepLink?
     
     let persistenceController = PersistenceController.shared
 
@@ -19,8 +20,19 @@ struct NYT_NewsApp: App {
         WindowGroup {
             HomeView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.deepLink, deepLink)
                 .environmentObject(favoriteArticleVM)
                 .environmentObject(networkMonitorVM)
+                .onOpenURL { url in
+                    let deepLinkManager = DeepLinkManager()
+                    guard let deepLink = deepLinkManager.manage(url: url) else { return }
+                    self.deepLink = deepLink
+                    
+                    // Reset the deeplink after being used.
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200)) {
+                            self.deepLink = nil
+                    }
+                }
         }
     }
     

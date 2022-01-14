@@ -11,6 +11,7 @@ import CoreData
 struct HomeView: View {
     
     @EnvironmentObject var networkMonitorVM: NetworkMonitorViewModel
+    @Environment(\.deepLink) var deepLink
     @StateObject var topStoriesVM = TopStoriesViewModel()
     @State var noConnectionAlertIsShowing = false
     
